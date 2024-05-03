@@ -3,6 +3,7 @@ package generator
 import (
 	"crypto/rand"
 	"math/big"
+	"strings"
 )
 
 type Chars struct {
@@ -13,11 +14,15 @@ type Chars struct {
 }
 
 func OTP() *Chars {
+	digits := "0123456789"
+	charset := "abcdefghijklmnopqrstuvwxyz"
+	special := "#!&@"
+
 	return &Chars{
-		Digits:             "0123456789",
-		LowerCaseAlphabets: "abcdefghijklmnopqrstuvwxyz",
-		UpperCaseAlphabets: "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
-		SpecialChars:       "#!&@",
+		Digits:             digits,
+		LowerCaseAlphabets: charset,
+		UpperCaseAlphabets: strings.ToUpper(charset),
+		SpecialChars:       special,
 	}
 }
 
