@@ -1,4 +1,4 @@
-package otp
+package generator
 
 import (
 	"crypto/rand"
@@ -21,7 +21,7 @@ func OTP() *Chars {
 	}
 }
 
-func (c *Chars) Generate(length int, digits bool, lowerCase bool, upperCase bool, specialChars bool) string {
+func (c *Chars) New(length int, digits bool, lowerCase bool, upperCase bool, specialChars bool) string {
 	allowedChars := ""
 	password := ""
 
